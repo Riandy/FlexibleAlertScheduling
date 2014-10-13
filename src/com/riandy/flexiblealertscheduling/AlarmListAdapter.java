@@ -84,7 +84,7 @@ public class AlarmListAdapter extends BaseAdapter {
 			
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				((AlarmListActivity) mContext).setAlarmEnabled(((Long) buttonView.getTag()).longValue(), isChecked);
+				((AlarmListActivity1) mContext).setAlarmEnabled(((Long) buttonView.getTag()).longValue(), isChecked);
 			}
 		});
 		
@@ -93,7 +93,7 @@ public class AlarmListAdapter extends BaseAdapter {
 			
 			@Override
 			public void onClick(View view) {
-				((AlarmListActivity) mContext).startAlarmDetailsActivity(((Long) view.getTag()).longValue());
+				((AlarmListActivity1) mContext).startAlarmDetailsActivity(((Long) view.getTag()).longValue());
 			}
 		});
 		
@@ -101,7 +101,7 @@ public class AlarmListAdapter extends BaseAdapter {
 			
 			@Override
 			public boolean onLongClick(View view) {
-				((AlarmListActivity) mContext).deleteAlarm(((Long) view.getTag()).longValue());
+				((AlarmListActivity1) mContext).deleteAlarm(((Long) view.getTag()).longValue());
 				return true;
 			}
 		});

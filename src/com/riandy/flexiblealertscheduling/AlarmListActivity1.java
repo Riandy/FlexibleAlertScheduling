@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 
-public class AlarmListActivity extends ListActivity {
+public class AlarmListActivity1 extends ListActivity {
 
 	private AlarmListAdapter mAdapter;
 	private AlarmDBHelper dbHelper = new AlarmDBHelper(this);

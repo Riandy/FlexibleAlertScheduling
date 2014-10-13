@@ -44,10 +44,11 @@ public class AlarmScreen extends Activity {
 		tvTime.setText(String.format("%02d : %02d", timeHour, timeMinute));
 		
 		Button dismissButton = (Button) findViewById(R.id.alarm_screen_button);
-		dismissButton.setOnClickListener(new OnClickListener() {
+		dismissButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
+				mPlayer.pause();
 				mPlayer.stop();
 				finish();
 			}
