@@ -56,7 +56,7 @@
             android:layout_below="@+id/divider2"
             android:checked="true"
             android:text="@string/details_repeat_weekly" />
-        
+
         <View
             android:id="@+id/divider1"
             style="@style/Divider"
@@ -92,7 +92,7 @@
             android:layout_below="@+id/alarm_details_repeat_monday"
             android:checked="true"
             android:text="@string/details_tuesday" />
-        
+
         <com.riandy.flexiblealertscheduling.CustomSwitch
             android:id="@+id/alarm_details_repeat_wednesday"
             android:layout_width="wrap_content"
@@ -132,19 +132,59 @@
             android:layout_below="@+id/alarm_details_repeat_friday"
             android:checked="true"
             android:text="@string/details_saturday" />
-        
+
+        <TextView
+            android:id="@+id/alertVolumeSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_details_repeat_saturday"
+            android:text="@string/alert_volume_settings"
+            android:textColor="@color/gray" />
+
         <View
-            android:id="@+id/divider4"
+            android:id="@+id/divider5"
             style="@style/Divider"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/alarm_details_repeat_saturday" />
+            android:layout_below="@+id/alertVolumeSetting" />
+
+        <LinearLayout
+            android:id="@+id/alarm_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/alertVolumeSetting"
+            android:background="@drawable/view_touch_selector"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/alarm_label_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/details_alarm_type"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/alarm_label_type_selection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/details_alarm_type_default"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider6"
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/alarm_type_container" />
 
         <LinearLayout
             android:id="@+id/alarm_ringtone_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/divider4"
+            android:layout_below="@+id/alarm_type_container"
             android:background="@drawable/view_touch_selector"
             android:orientation="vertical" >
 
@@ -170,6 +210,39 @@
             style="@style/Divider"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/alarm_ringtone_container" />
+
+        <CheckBox
+            android:id="@+id/alarm_vibrate_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider3"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/alarm_vibrate"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/alarm_notification_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_vibrate_selector"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/alarm_notification"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/alarm_screen_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_notification_selector"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/alarm_screen"
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </ScrollView>

@@ -16,5 +16,12 @@
     <string name="details_alarm_tone">Alarm Tone</string>
     <string name="details_alarm_tone_default">Select an alarm tone</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="alert_volume_settings">Alert and Volume Settings</string>
+    <string name="details_alarm_type">Alert Type</string>
+    <string name="details_alarm_type_default">Music/Ringtone</string>
+    <string name="alarm_vibrate">Vibrate</string>
+    <string name="alarm_notification">Notification</string>
+    <string name="alarm_screen">Alarm Screen</string>
+    <string name="title_activity_apps_list">AppsListActivity</string>
 
 </resources>

@@ -7,9 +7,10 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="18" />
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,15 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.riandy.flexiblealertscheduling.AlarmListActivity1" />
-        <activity android:name="com.riandy.flexiblealertscheduling.AlarmScreen" />
-        <activity android:name="com.riandy.flexiblealertscheduling.AlarmDetailsActivity" />
+        <activity android:name=".AlarmListActivity1" />
+        <activity android:name=".AlarmScreen" />
+        <activity android:name=".AlarmDetailsActivity" />
 
         <service
-            android:name="com.riandy.flexiblealertscheduling.AlarmService"
+            android:name=".AlarmService"
             android:enabled="true" />
 
-        <receiver android:name="com.riandy.flexiblealertscheduling.AlarmManagerHelper" >
+        <receiver android:name=".AlarmManagerHelper" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -41,6 +42,10 @@
         <activity
             android:name=".TestActivity"
             android:label="@string/title_activity_test" >
+        </activity>
+        <activity
+            android:name=".AppsListActivity"
+            android:label="@string/title_activity_apps_list" >
         </activity>
     </application>
 

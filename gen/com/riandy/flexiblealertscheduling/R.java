@@ -858,10 +858,11 @@ containing a value of this type.
         public static int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static int abc_search_url_text_holo=0x7f070003;
+        public static int abc_search_url_text_holo=0x7f070004;
         public static int abc_search_url_text_normal=0x7f070000;
         public static int abc_search_url_text_pressed=0x7f070002;
         public static int abc_search_url_text_selected=0x7f070001;
+        public static int gray=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1084,7 +1085,7 @@ containing a value of this type.
         public static int view_touch_selector=0x7f02005b;
     }
     public static final class id {
-        public static int action_add_new_alarm=0x7f05005f;
+        public static int action_add_new_alarm=0x7f050069;
         public static int action_bar=0x7f05001c;
         public static int action_bar_activity_content=0x7f050015;
         public static int action_bar_container=0x7f05001b;
@@ -1096,50 +1097,64 @@ containing a value of this type.
         public static int action_menu_divider=0x7f050016;
         public static int action_menu_presenter=0x7f050017;
         public static int action_mode_close_button=0x7f050024;
-        public static int action_save_alarm_details=0x7f05005e;
-        public static int action_settings=0x7f050060;
+        public static int action_save_alarm_details=0x7f050068;
+        public static int action_settings=0x7f05006a;
         public static int activity_chooser_view_content=0x7f050025;
-        public static int alarm_details_name=0x7f050041;
-        public static int alarm_details_repeat_friday=0x7f05004a;
-        public static int alarm_details_repeat_monday=0x7f050046;
-        public static int alarm_details_repeat_saturday=0x7f05004b;
-        public static int alarm_details_repeat_sunday=0x7f050045;
-        public static int alarm_details_repeat_thursday=0x7f050049;
-        public static int alarm_details_repeat_tuesday=0x7f050047;
-        public static int alarm_details_repeat_wednesday=0x7f050048;
-        public static int alarm_details_repeat_weekly=0x7f050043;
-        public static int alarm_details_time_picker=0x7f050040;
-        public static int alarm_item_friday=0x7f050059;
-        public static int alarm_item_monday=0x7f050055;
-        public static int alarm_item_name=0x7f050052;
-        public static int alarm_item_saturday=0x7f05005a;
-        public static int alarm_item_sunday=0x7f050054;
-        public static int alarm_item_thursday=0x7f050058;
-        public static int alarm_item_time=0x7f050051;
-        public static int alarm_item_toggle=0x7f050053;
-        public static int alarm_item_tuesday=0x7f050056;
-        public static int alarm_item_wednesday=0x7f050057;
-        public static int alarm_label_tone=0x7f05004e;
-        public static int alarm_label_tone_selection=0x7f05004f;
-        public static int alarm_ringtone_container=0x7f05004d;
+        public static int alarm_details_name=0x7f050042;
+        public static int alarm_details_repeat_friday=0x7f05004b;
+        public static int alarm_details_repeat_monday=0x7f050047;
+        public static int alarm_details_repeat_saturday=0x7f05004c;
+        public static int alarm_details_repeat_sunday=0x7f050046;
+        public static int alarm_details_repeat_thursday=0x7f05004a;
+        public static int alarm_details_repeat_tuesday=0x7f050048;
+        public static int alarm_details_repeat_wednesday=0x7f050049;
+        public static int alarm_details_repeat_weekly=0x7f050044;
+        public static int alarm_details_time_picker=0x7f050041;
+        public static int alarm_item_friday=0x7f050062;
+        public static int alarm_item_monday=0x7f05005e;
+        public static int alarm_item_name=0x7f05005b;
+        public static int alarm_item_saturday=0x7f050063;
+        public static int alarm_item_sunday=0x7f05005d;
+        public static int alarm_item_thursday=0x7f050061;
+        public static int alarm_item_time=0x7f05005a;
+        public static int alarm_item_toggle=0x7f05005c;
+        public static int alarm_item_tuesday=0x7f05005f;
+        public static int alarm_item_wednesday=0x7f050060;
+        public static int alarm_label_tone=0x7f050054;
+        public static int alarm_label_tone_selection=0x7f050055;
+        public static int alarm_label_type=0x7f050050;
+        public static int alarm_label_type_selection=0x7f050051;
+        public static int alarm_notification_selector=0x7f050058;
+        public static int alarm_ringtone_container=0x7f050053;
         public static int alarm_screen_button=0x7f05003e;
         public static int alarm_screen_name=0x7f05003f;
+        public static int alarm_screen_selector=0x7f050059;
         public static int alarm_screen_time=0x7f05003d;
         public static int alarm_screen_title=0x7f05003c;
+        public static int alarm_type_container=0x7f05004f;
+        public static int alarm_vibrate_selector=0x7f050057;
+        public static int alertVolumeSetting=0x7f05004d;
+        public static int alert_launch_app=0x7f05006e;
+        public static int alert_music=0x7f05006c;
+        public static int alert_ringtone=0x7f05006d;
+        public static int alert_silent=0x7f05006b;
         public static int always=0x7f05000b;
+        public static int apps_listView=0x7f050040;
+        public static int apps_row_textview=0x7f050064;
         public static int beginning=0x7f050011;
         public static int checkbox=0x7f05002d;
         public static int collapseActionView=0x7f05000d;
-        public static int custom_switch_button=0x7f05005c;
-        public static int custom_switch_label=0x7f05005d;
-        public static int custom_switch_layout=0x7f05005b;
+        public static int custom_switch_button=0x7f050066;
+        public static int custom_switch_label=0x7f050067;
+        public static int custom_switch_layout=0x7f050065;
         public static int default_activity_button=0x7f050028;
         public static int dialog=0x7f05000e;
         public static int disableHome=0x7f050008;
-        public static int divider1=0x7f050044;
-        public static int divider2=0x7f050042;
-        public static int divider3=0x7f050050;
-        public static int divider4=0x7f05004c;
+        public static int divider1=0x7f050045;
+        public static int divider2=0x7f050043;
+        public static int divider3=0x7f050056;
+        public static int divider5=0x7f05004e;
+        public static int divider6=0x7f050052;
         public static int dropdown=0x7f05000f;
         public static int edit_query=0x7f050030;
         public static int end=0x7f050013;
@@ -1234,18 +1249,22 @@ containing a value of this type.
         public static int abc_simple_decor=0x7f030017;
         public static int activity_alarm_list=0x7f030018;
         public static int activity_alarm_screen=0x7f030019;
-        public static int activity_details=0x7f03001a;
-        public static int activity_main=0x7f03001b;
-        public static int activity_test=0x7f03001c;
-        public static int alarm_list_item=0x7f03001d;
-        public static int custom_switch=0x7f03001e;
-        public static int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static int activity_apps_list=0x7f03001a;
+        public static int activity_details=0x7f03001b;
+        public static int activity_main=0x7f03001c;
+        public static int activity_test=0x7f03001d;
+        public static int alarm_list_item=0x7f03001e;
+        public static int apps_rowlayout=0x7f03001f;
+        public static int custom_switch=0x7f030020;
+        public static int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
         public static int alarm_details=0x7f0c0000;
         public static int alarm_list=0x7f0c0001;
-        public static int main=0x7f0c0002;
-        public static int test=0x7f0c0003;
+        public static int apps_list=0x7f0c0002;
+        public static int main=0x7f0c0003;
+        public static int popup_menu_alert_type=0x7f0c0004;
+        public static int test=0x7f0c0005;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1289,10 +1308,16 @@ containing a value of this type.
          */
         public static int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static int action_settings=0x7f0a000f;
+        public static int alarm_notification=0x7f0a0020;
+        public static int alarm_screen=0x7f0a0021;
+        public static int alarm_vibrate=0x7f0a001f;
+        public static int alert_volume_settings=0x7f0a001c;
         public static int app_name=0x7f0a000d;
         public static int details_alarm_name=0x7f0a0010;
         public static int details_alarm_tone=0x7f0a0019;
         public static int details_alarm_tone_default=0x7f0a001a;
+        public static int details_alarm_type=0x7f0a001d;
+        public static int details_alarm_type_default=0x7f0a001e;
         public static int details_friday=0x7f0a0017;
         public static int details_monday=0x7f0a0013;
         public static int details_repeat_weekly=0x7f0a0011;
@@ -1302,6 +1327,7 @@ containing a value of this type.
         public static int details_tuesday=0x7f0a0014;
         public static int details_wednesday=0x7f0a0015;
         public static int hello_world=0x7f0a000e;
+        public static int title_activity_apps_list=0x7f0a0022;
         public static int title_activity_test=0x7f0a001b;
     }
     public static final class style {

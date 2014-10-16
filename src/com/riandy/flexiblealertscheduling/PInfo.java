@@ -1,9 +1,12 @@
 package com.riandy.flexiblealertscheduling;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -29,20 +32,26 @@ public class PInfo {
 	}
 
 	public ArrayList<PInfo> getPackages() {
-		ArrayList<PInfo> apps = getInstalledApps(false); /* false = no system packages */
+		ArrayList<PInfo> apps = getInstalledApps(); /* false = no system packages */
 		final int max = apps.size();
 		for (int i=0; i<max; i++) {
 			apps.get(i).prettyPrint();
 		}
 		return apps;
 	}
-
-	private ArrayList<PInfo> getInstalledApps(boolean getSysPackages) {
+	
+	private boolean isSystemPackage(PackageInfo pkgInfo) {
+	    return ((pkgInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) ? true
+	            : false;
+	}
+	
+	private ArrayList<PInfo> getInstalledApps() {
 		ArrayList<PInfo> res = new ArrayList<PInfo>();        
 		List<PackageInfo> packs = _ctx.getPackageManager().getInstalledPackages(0);
 		for(int i=0;i<packs.size();i++) {
 			PackageInfo p = packs.get(i);
-			if ((!getSysPackages) && (p.versionName == null)) {
+			
+			if (isSystemPackage(p)) {
 				continue ;
 			}
 			PInfo newInfo = new PInfo();
@@ -50,9 +59,23 @@ public class PInfo {
 			newInfo.pname = p.packageName;
 			newInfo.versionName = p.versionName;
 			newInfo.versionCode = p.versionCode;
-			newInfo.icon = p.applicationInfo.loadIcon(_ctx.getPackageManager());
+			newInfo.icon= p.applicationInfo.loadIcon(_ctx.getPackageManager());
 			res.add(newInfo);
 		}
+		Collections.sort(res,new Comparator<PInfo>(){
+			public int compare(PInfo p1, PInfo p2){
+				return p1.getAppname().compareToIgnoreCase(p2.getAppname());
+			}
+		});
+
 		return res; 
+	}
+	
+	public String getAppname() {
+		return appname;
+	}
+
+	public Drawable getIcon() {
+		return icon;
 	}
 }

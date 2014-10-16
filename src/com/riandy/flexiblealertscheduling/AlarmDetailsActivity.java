@@ -2,6 +2,7 @@ package com.riandy.flexiblealertscheduling;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,8 +12,10 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class AlarmDetailsActivity extends Activity {
 	
@@ -30,7 +33,14 @@ public class AlarmDetailsActivity extends Activity {
 	private CustomSwitch chkThursday;
 	private CustomSwitch chkFriday;
 	private CustomSwitch chkSaturday;
-	private TextView txtToneSelection;
+	private TextView txtToneSelection,txtAlarmLabel;
+	
+	public static final String ALARM_RINGTONE = "ringtone";
+	public static final String ALARM_MUSIC = "music";
+	public static final String ALARM_LAUNCH_APP = "launchApp";
+	public static final String ALARM_SILENT = "silent";
+	
+	private String alarmType;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +64,8 @@ public class AlarmDetailsActivity extends Activity {
 		chkFriday = (CustomSwitch) findViewById(R.id.alarm_details_repeat_friday);
 		chkSaturday = (CustomSwitch) findViewById(R.id.alarm_details_repeat_saturday);
 		txtToneSelection = (TextView) findViewById(R.id.alarm_label_tone_selection);
-		
+		txtAlarmLabel = (TextView) findViewById(R.id.alarm_label_tone);
+
 		long id = getIntent().getExtras().getLong("id");
 		
 		if (id == -1) {
@@ -84,8 +95,69 @@ public class AlarmDetailsActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-				startActivityForResult(intent , 1);
+				
+				//silent mode
+				
+				if(alarmType == ALARM_RINGTONE) {
+					//selecting ringtone
+					Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+					startActivityForResult(intent , 1);
+				}else if(alarmType == ALARM_MUSIC) {
+					//selecting music
+					Toast.makeText(getApplicationContext(), "Sorry,  not yet implemented",Toast.LENGTH_SHORT).show();
+				}else if(alarmType == ALARM_LAUNCH_APP) {
+					//selecting Apps
+					//display list of Apps in another activity
+					Intent intent = new Intent(getApplicationContext(),AppsListActivity.class);
+					startActivityForResult(intent,2);
+				}else {
+					Toast.makeText(getApplicationContext(), "Sorry,  not yet implemented",Toast.LENGTH_SHORT).show();					
+				}
+			}
+		});
+		
+		final LinearLayout alarmTypeContainer = (LinearLayout) findViewById(R.id.alarm_type_container);
+		alarmTypeContainer.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+
+				PopupMenu popup = new PopupMenu(getApplicationContext(), alarmTypeContainer);
+                popup.getMenuInflater()
+                    .inflate(R.menu.popup_menu_alert_type, popup.getMenu());
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        
+                    	int id = item.getItemId();
+              
+                    	TextView alarmLabel = (TextView) findViewById(R.id.alarm_label_type_selection);
+                    	alarmLabel.setText(item.getTitle());
+                    	if (id == R.id.alert_silent) {
+                    		txtAlarmLabel.setTextColor(Color.GRAY);
+                    		txtAlarmLabel.setText("No sound..");
+                    		txtToneSelection.setText("None");
+                    		alarmType = ALARM_SILENT;
+                    	} else if(id == R.id.alert_music) {
+                        	txtAlarmLabel.setText("Alarm "+item.getTitle());
+                        	txtToneSelection.setText("Select an alarm "+item.getTitle());
+                        	alarmType = ALARM_MUSIC;
+                    	} else if (id == R.id.alert_launch_app) {
+                        	txtAlarmLabel.setText("Alarm "+item.getTitle());
+                        	txtToneSelection.setText("Select an alarm "+item.getTitle());
+                        	alarmType = ALARM_LAUNCH_APP;
+                    	} else if (id == R.id.alert_ringtone) {
+                        	txtAlarmLabel.setText("Alarm "+item.getTitle());
+                        	txtToneSelection.setText("Select an alarm "+item.getTitle());
+                        	alarmType = ALARM_RINGTONE;
+                    	}
+                    	
+                        return true;
+                    }
+                });
+
+                popup.show(); //showing popup menu
+				
 			}
 		});
 	}
@@ -96,11 +168,14 @@ public class AlarmDetailsActivity extends Activity {
 		
 		if (resultCode == RESULT_OK) {
 	        switch (requestCode) {
-		        case 1: {
+		        case 1: 
 		        	alarmDetails.alarmTone = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
 		        	txtToneSelection.setText(RingtoneManager.getRingtone(this, alarmDetails.alarmTone).getTitle(this));
 		            break;
-		        }
+		        case 2:
+		        	Toast.makeText(getApplicationContext(), data.getStringExtra("appSelected"), Toast.LENGTH_SHORT).show();
+		        	txtToneSelection.setText(data.getStringExtra("appSelected"));
+		        	break;
 		        default: {
 		            break;
 		        }
