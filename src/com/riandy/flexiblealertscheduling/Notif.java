@@ -28,7 +28,7 @@ public class Notif {
 		        .setSmallIcon(_icon)
 		        .setContentTitle(_title)
 		        .setContentText(_content);
-
+		
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(_ctx);
 		stackBuilder.addNextIntent(_resultIntent);
 		PendingIntent resultPendingIntent =
